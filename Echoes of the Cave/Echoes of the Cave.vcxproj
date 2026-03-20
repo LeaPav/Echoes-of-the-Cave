@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\game.h" />
+    <ClInclude Include="include\entities\Entities.h" />
     <ClInclude Include="include\entities\player.h" />
     <ClInclude Include="include\ui\menu.h" />
     <ClInclude Include="include\ui\renderer.h" />

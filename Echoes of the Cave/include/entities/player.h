@@ -1,18 +1,10 @@
 #pragma once
-
-namespace Player {
-
-	class Player {
-	private:
-
-		float x;
-		float y;
-		float z;
+#include "entities/Entities.h"
 
 
-	public:
+class Player : virtual public Entities::Entities {
 
-		Player();
-	};
+	Player(float X, float Y, float Z,
+		float sizeX, float sizeY, float sizeZ);
 
-}
+};
