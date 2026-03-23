@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Entities {
+namespace Entit {
 
 	class Entities {
 	public:
