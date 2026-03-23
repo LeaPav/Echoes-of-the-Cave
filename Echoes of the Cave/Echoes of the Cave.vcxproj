@@ -102,10 +102,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\hanso\source\repos\Echoes-of-the-Cave\Echoes of the Cave\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\game.h" />
+    <ClInclude Include="include\entities\Entities.h" />
     <ClInclude Include="include\entities\player.h" />
     <ClInclude Include="include\ui\menu.h" />
     <ClInclude Include="include\ui\renderer.h" />
