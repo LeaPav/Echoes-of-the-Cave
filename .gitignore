@@ -435,3 +435,9 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudio
+
+
+# --- Custom Motor Photon Rules ---
+Photon-Editor-V2.0.3/src/
+Photon-Editor-V2.0.3/*.exe
+Photon-Editor-V2.0.3/*.lib
