@@ -1,0 +1,206 @@
+{
+    "Entities": [
+        {
+            "Camera": {
+                "FarPlane": 1000.0,
+                "Fov": 80.0,
+                "NearPlane": 0.009999999776482582
+            },
+            "EntityID": 1,
+            "Name": "Main Camera",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/ThirdPersonCamera.dll"
+            },
+            "Transform": {
+                "Position": [
+                    0.018616728484630585,
+                    0.11290646344423294,
+                    0.25586554408073425
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "EntityID": 2,
+            "Light": {
+                "CastShadows": true,
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Direction": [
+                    0.0,
+                    -1.0,
+                    0.0
+                ],
+                "Intensity": 5.0,
+                "OrthoSize": 1.0,
+                "Range": 5.0,
+                "ShadowFar": 30.0,
+                "ShadowNear": 0.10000000149011612,
+                "SpotAngle": 45.0,
+                "Type": 0
+            },
+            "Name": "Sun",
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "Animator": {
+                "Animations": [
+                    {
+                        "IsLooping": true,
+                        "Name": "Assets\\Mixamo\\Jog Backward_anim_mixamorig_Hips.pa",
+                        "Path": "Assets\\Mixamo\\Jog Backward_anim_mixamorig_Hips.pa",
+                        "Weight": 0.0029455898329615593
+                    },
+                    {
+                        "IsLooping": true,
+                        "Name": "Assets\\Mixamo\\Jogging_anim_mixamorig_Hips.pa",
+                        "Path": "Assets\\Mixamo\\Jogging_anim_mixamorig_Hips.pa",
+                        "Weight": 0.0014727949164807796
+                    },
+                    {
+                        "IsLooping": true,
+                        "Name": "Assets\\Mixamo\\idle_anim_mixamorig_Hips.pa",
+                        "Path": "Assets\\Mixamo\\idle_anim_mixamorig_Hips.pa",
+                        "Weight": 0.9955816268920898
+                    }
+                ],
+                "SkeletonPath": "Assets\\Mixamo\\idle_skeleton.pa"
+            },
+            "EntityID": 3,
+            "MeshRenderer": {
+                "Active": true,
+                "Materials": [
+                    "Assets/Mixamo\\Idle_mat_Ch15_body.pa",
+                    "Assets/Mixamo\\Idle_mat_Ch15_body1.pa"
+                ],
+                "Path": "Assets\\Mixamo\\idle_mesh.pa"
+            },
+            "Name": "Character",
+            "RigidBody": {
+                "BoxSize": [
+                    70.0,
+                    175.0,
+                    70.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.09000000357627869,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    true,
+                    false,
+                    true
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.0010000000474974513,
+                    0.0010000000474974513,
+                    0.0010000000474974513
+                ]
+            }
+        },
+        {
+            "EntityID": 4,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    1.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        }
+    ]
+}
