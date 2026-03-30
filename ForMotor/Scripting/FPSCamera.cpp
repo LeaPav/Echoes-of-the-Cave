@@ -17,6 +17,14 @@ public:
     bool invertX = false;
     bool invertY = false;
 
+    bool canJump = true;
+    bool isJumping = false;
+    float jumpCooldownTimer = 0.0f;
+    float jumpCooldown = 0.3f;
+
+    bool isSprinting = false;
+    float sprintMultiplier = 2.0f;
+
     Engine::ECS::Entity targetEntity = Engine::ECS::NULL_ENTITY;
     bool isMouseCaptured = false;
 
@@ -102,21 +110,48 @@ public:
         if (glm::length(inputDirection) > 0.0f)
             inputDirection = glm::normalize(inputDirection) * moveSpeed;
 
+        if (isMouseCaptured) {
+            isSprinting = InputSysteminstance->GetKeyState(GLFW_KEY_LEFT_SHIFT);
+        }
+
+        float currentSpeed = moveSpeed;
+        if (isSprinting && glm::length(inputDirection) > 0.0f) {
+            currentSpeed = moveSpeed * sprintMultiplier;
+        }
+
+        if (glm::length(inputDirection) > 0.0f) {
+            inputDirection = glm::normalize(inputDirection) * currentSpeed;
+        }
         if (physicsSystem) {
             glm::vec3 currentVel = physicsSystem->GetLinearVelocity(targetEntity);
+            auto& t = registry->GetComponent<Engine::Components::Transform>(targetEntity);
+
+            if (jumpCooldownTimer > 0.0f) {
+                jumpCooldownTimer -= dt;
+            }
+
             physicsSystem->SetLinearVelocity(targetEntity,
                 glm::vec3(inputDirection.x, currentVel.y, inputDirection.z));
 
-            // Saut
-            if (InputSysteminstance->GetKeyPressed(GLFW_KEY_SPACE)) {
-                auto& t = registry->GetComponent<Engine::Components::Transform>(targetEntity);
-                physicsSystem->AddImpulse(targetEntity, t.Up * 2.0f);
+            bool isGrounded = (jumpCooldownTimer <= 0.0f) && (currentVel.y > -0.5f && currentVel.y <= 0.1f);
+
+            if (isGrounded && isJumping) {
+                canJump = true;
+                isJumping = false;
             }
+
+            // Saut
+            if (InputSysteminstance->GetKeyPressed(GLFW_KEY_SPACE) && canJump) {
+                physicsSystem->AddImpulse(targetEntity, t.Up * 2.0f);
+                canJump = false;
+                isJumping = true;
+                jumpCooldownTimer = jumpCooldown;
+            }
+
+            player.Rotation.y = yaw + 180.0f;
+
+            cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
         }
-
-        player.Rotation.y = yaw + 180.0f;
-
-        cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
     }
 };
 
