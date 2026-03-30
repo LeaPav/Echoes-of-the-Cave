@@ -431,6 +431,12 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# --- Ignorer les éléments spécifiques au moteur Photon ---
+
+Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/src/
+Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/*.exe
+Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/*.lib
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 

@@ -1,0 +1,9 @@
+{
+  "systems": [
+    {
+      "name": "MyCustomNetworkingSystem",
+      "source_file": "MyCustomNetworkingSystem.cpp",
+      "enabled": false
+    }
+  ]
+}

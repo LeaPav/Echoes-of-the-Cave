@@ -1,0 +1,196 @@
+// MeshGenerator.cpp
+#include "script_pch.h" 
+
+using namespace Engine;
+class MeshGenerator : public Engine::Scripting::NativeScript {
+private:
+    // --- CUSTOM SHADER DEFINITION (FORWARD-COMPATIBLE) ---
+    const char* NORMAL_VIS_VERT_SRC = R"(
+        #version 330 core
+        layout (location = 0) in vec3 inPos;
+        layout (location = 1) in vec3 inNormal;
+        layout (location = 2) in vec2 inUV; // <-- Must accept all 3 VAO attributes
+
+        uniform mat4 uModel;
+        uniform mat4 uView;
+        uniform mat4 uProjection;
+
+        out vec3 fragPosWorld;
+        out vec3 fragNormalWorld;
+
+        void main() {
+            fragPosWorld = (uModel * vec4(inPos, 1.0)).xyz;
+            fragNormalWorld = mat3(transpose(inverse(uModel))) * inNormal;
+            gl_Position = uProjection * uView * uModel * vec4(inPos, 1.0);
+        }
+    )";
+
+    const char* NORMAL_VIS_FRAG_SRC = R"(
+        #version 330 core
+        out vec4 FragColor;
+
+        in vec3 fragPosWorld;
+        in vec3 fragNormalWorld;
+        
+        uniform vec3 uViewPos;
+        uniform vec3 uLightPos;
+        uniform vec3 uLightColor;
+        uniform float uLightIntensity;
+        uniform vec2 u_Resolution; // <-- Example of a custom uniform
+        
+        void main() {
+            vec3 albedo = normalize(fragNormalWorld) * 0.5 + 0.5;
+            vec3 ambient = 0.05 * albedo;
+            vec3 normal = normalize(fragNormalWorld);
+            vec3 lightDir = normalize(uLightPos - fragPosWorld);
+            float diff = max(dot(normal, lightDir), 0.0);
+            vec3 diffuse = diff * uLightColor * uLightIntensity;
+            vec3 viewDir = normalize(uViewPos - fragPosWorld);
+            vec3 halfwayDir = normalize(lightDir + viewDir);
+            float spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
+            vec3 specular = spec * uLightColor * uLightIntensity;
+            vec3 litColor = (ambient + diffuse + specular) * albedo;
+            
+            FragColor = vec4(litColor, 0.25); // 50% transparency
+        }
+    )";
+
+    // terminal* TerminalInstance is inherited
+    float SphereSize = 1.0f;
+    int RingCount = 32;
+    
+    
+    Components::Transform* transform = nullptr;
+    Components::MeshRenderer* modelRenderer = nullptr;
+    float currentTime = 0.0f;
+
+public:
+    void OnCreate() override {
+        registry->GetOrAddComponent<Components::Transform>(entityID);
+        transform = &registry->GetComponent<Components::Transform>(entityID);
+        if (!transform) {
+            TerminalInstance->error("Transform not found...");
+        }
+
+        modelRenderer = &registry->GetOrAddComponent<Components::MeshRenderer>(entityID);
+        if (!modelRenderer) {
+            TerminalInstance->error("ModelRenderer not found...");
+        } else {
+            GenerateGeometry();
+        }
+
+        // --- Load and Assign Custom Shader ---
+        Systems::RenderSystem* rs = engine->GetSystem<Systems::RenderSystem>(); 
+        const std::string shaderName = "normal_visualizer_transparent";
+
+        if (rs) {
+            if (!rs->HasShader(shaderName)) { 
+                TerminalInstance->info("Loading custom shader: " + shaderName);
+                rs->AddShader(shaderName, NORMAL_VIS_VERT_SRC, NORMAL_VIS_FRAG_SRC);
+            }
+            
+            // --- START MODIFICATION ---
+            // 1. Now we can call AddComponent WITH an argument!
+            Components::MaterialOverride* material = &registry->GetOrAddComponent<Components::MaterialOverride>(entityID, shaderName);
+
+            
+            // uniform vec3 uLightPos;
+            // uniform vec3 uLightColor;
+            // uniform float uLightIntensity;
+            material->Uniforms["uLightPos"] = std::array<float, 3>{1.0f, 1.0f, 1.0f};
+            material->Uniforms["uLightColor"] = std::array<float, 3>{1.0f, 1.0f, 1.0f};
+            material->Uniforms["uLightIntensity"] = 1.0f;
+
+
+            // 2. Add the Transparent component back. This is required.
+            registry->GetOrAddComponent<Components::Transparent>(entityID);
+            // --- END MODIFICATION ---
+            
+        } else {
+            TerminalInstance->error("Could not get RenderSystem to load custom shader.");
+        }
+
+        if (transform && modelRenderer) {
+            TerminalInstance->success("MeshGenerator Init successfully...");
+        }
+    }
+
+    void GenerateGeometry() {
+        // (This function is unchanged)
+        // Mesh mesh; 
+        auto mesh = std::make_shared<Graphics::Mesh>();
+        int segments = RingCount;
+        if (segments < 3) segments = 3;
+
+        for (int i = 0; i <= segments; ++i) {
+            float phi = glm::pi<float>() * (float)i / (float)segments - glm::pi<float>() / 2.0f; 
+            float y = sin(phi);
+            float cosPhi = cos(phi);
+            for (int j = 0; j <= segments; ++j) {
+                float theta = 2.0f * glm::pi<float>() * (float)j / (float)segments; 
+                float x = cosPhi * cos(theta);
+                float z = cosPhi * sin(theta);
+                glm::vec3 pos = glm::vec3(x, y, z) * SphereSize;
+                glm::vec3 normal = glm::vec3(x, y, z);
+                glm::vec2 uv = glm::vec2((float)j / (float)segments, (float)i / (float)segments);
+                mesh->vertex_data.push_back(pos.x);
+                mesh->vertex_data.push_back(pos.y);
+                mesh->vertex_data.push_back(pos.z);
+                mesh->vertex_data.push_back(normal.x);
+                mesh->vertex_data.push_back(normal.y);
+                mesh->vertex_data.push_back(normal.z);
+                mesh->vertex_data.push_back(uv.x);
+                mesh->vertex_data.push_back(uv.y);
+            }
+        }
+        mesh->vertexCount = (segments + 1) * (segments + 1);
+
+        for (int i = 0; i < segments; ++i) {
+            for (int j = 0; j < segments; ++j) {
+                int v1 = (i * (segments + 1)) + j;
+                int v2 = v1 + 1;
+                int v3 = ((i + 1) * (segments + 1)) + j;
+                int v4 = v3 + 1;
+                mesh->indices.push_back(v1);
+                mesh->indices.push_back(v3);
+                mesh->indices.push_back(v2);
+                mesh->indices.push_back(v2);
+                mesh->indices.push_back(v3);
+                mesh->indices.push_back(v4);
+            }
+        }
+        
+        // mesh.texture = generateRandomColorTexture();
+        mesh->upload();
+        
+        modelRenderer->active = true;
+        modelRenderer->meshes.push_back(std::move(mesh));
+    }
+
+    void OnUpdate(float deltaTime) override {
+        // (This function is unchanged)
+        currentTime += deltaTime;
+        if (transform) {
+            transform->Rotation.y = currentTime * 25.0f;
+            transform->Rotation.x = sin(currentTime * 0.5f) * 30.0f;
+        }
+
+        // Example: Press 'K' to damage the ship
+        if (InputSysteminstance->GetKeyPressed(GLFW_KEY_K)) {
+            TerminalInstance->info("'K' pressed, attempting to call DebugDrawMeshGenerator.DebugLog...");
+            
+            // 1. Get the registry
+            auto registry = engine->GetSystem<Systems::FunctionRegisterySystem>();
+            
+            // 2. Call the function by name, passing arguments in a vector
+            if (registry) {
+                registry->Call("DebugDrawMeshGenerator.DebugLog", { 10 }); // Pass 10 damage
+            }
+        }
+    }
+};
+
+// --- The Factory Function ---
+extern "C" __declspec(dllexport) Engine::Scripting::NativeScript* CreateScript() {
+    return new MeshGenerator();
+}
