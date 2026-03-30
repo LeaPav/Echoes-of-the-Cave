@@ -176,7 +176,7 @@ public:
             // Ignore the targetEntity (character) so the raycast doesn't hit its own capsule
             Engine::Systems::PhysicsUtils::RaycastHit hitResult = physicsSystem->Raycast(
                 targetTransform.Position, 
-                targetTransform.Position - glm::vec3(0.0, 0.1, 0.0), 
+                targetTransform.Position - glm::vec3(0.0, 0.05, 0.0), 
                 targetEntity, 
                 { true, 0.1f, {1, 0, 0}, {1, 1, 0}, {0, 1, 1}, {0.5, 0.5, 0.5}, 0.05f, 0.012f }
             );
