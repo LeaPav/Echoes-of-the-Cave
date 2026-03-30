@@ -1,0 +1,27 @@
+{
+    "OutputPath": "Data/Resources.pak",
+    "EncryptionKey": "PhotonEngineReleaseKey_2026",
+    "CustomSystemsManifest": "Engine/CustomSystems.json",
+    "EngineSettings": "Engine/EngineSettings.json",
+    "Assets": {
+        "Scripts/FreeCamera.dll": "Scripts/FreeCamera.dll",
+        "Scripts/ThirdPersonCamera.dll": "Scripts/ThirdPersonCamera.dll",
+        "Scripts/HUDScript.dll": "Scripts/HUDScript.dll",
+        "Scripts/GameMaster.dll": "Scripts/GameMaster.dll",
+        "Assets/Scenes/DefaultScene.pscene": "Assets/Scenes/DefaultScene.pscene",
+        "Assets/Scenes/Test.pscene": "Assets/Scenes/Test.pscene",
+        "Assets/Default/Plane_mesh.pa": "Assets/Default/Plane_mesh.pa",
+
+        "Assets/Mixamo/idle_mesh.pa": "Assets/Mixamo/idle_mesh.pa",
+        "Assets/Mixamo/idle_skeleton.pa": "Assets/Mixamo/idle_skeleton.pa",
+        "Assets/Mixamo/Jog Backward_anim_mixamorig_Hips.pa": "Assets/Mixamo/Jog Backward_anim_mixamorig_Hips.pa",
+        "Assets/Mixamo/Jogging_anim_mixamorig_Hips.pa": "Assets/Mixamo/Jogging_anim_mixamorig_Hips.pa",
+        "Assets/Mixamo/idle_anim_mixamorig_Hips.pa": "Assets/Mixamo/idle_anim_mixamorig_Hips.pa",
+        "Assets/Mixamo/Idle_mat_Ch15_body.pa": "Assets/Mixamo/Idle_mat_Ch15_body.pa",
+        "Assets/Mixamo/Idle_mat_Ch15_body1.pa": "Assets/Mixamo/Idle_mat_Ch15_body1.pa",
+        "Assets/Mixamo/textures/Ch15_1001_Diffuse.pa": "Assets/Mixamo/textures/Ch15_1001_Diffuse.pa",
+        "Assets/Mixamo/textures/Ch15_1001_Normal.pa": "Assets/Mixamo/textures/Ch15_1001_Normal.pa",
+        "Assets/Mixamo/textures/Ch15_1002_Diffuse.pa": "Assets/Mixamo/textures/Ch15_1002_Diffuse.pa",
+        "Assets/Mixamo/textures/Ch15_1002_Normal.pa": "Assets/Mixamo/textures/Ch15_1002_Normal.pa"
+    }
+}
