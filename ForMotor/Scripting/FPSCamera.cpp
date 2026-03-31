@@ -1,4 +1,5 @@
 #include "script_pch.h"
+
 #ifdef _WIN32
 #define SCRIPT_API __declspec(dllexport)
 #else
@@ -39,12 +40,12 @@ public:
     void OnCreate() override {
         FindTarget();
 
-        auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegisterySystem>();
-        if (funcSys) {
-            funcSys->Register("OnStep", [this](std::vector<std::any> args) -> std::any {
-                return {};
-                });
-        }
+        /* auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegisterySystem>();
+         if (funcSys) {
+             funcSys->Register("OnStep", [this](std::vector<std::any> args) -> std::any {
+                 return {};
+                 });
+         }*/
     }
 
     void FindTarget() {
