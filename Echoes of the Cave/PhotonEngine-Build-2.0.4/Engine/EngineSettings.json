@@ -1,0 +1,14 @@
+{
+    "Is2DMode": false,
+    "SHADOWS_SETTINGS": {
+        "MAX_LIGHTS": 64,
+        "MAX_SHADOW_CASTERS": 32,
+        "SHADOW_HEIGHT_2D": 2048,
+        "SHADOW_HEIGHT_CUBE": 512,
+        "SHADOW_WIDTH_2D": 2048,
+        "SHADOW_WIDTH_CUBE": 512
+    },
+    "ScreenHeight": 720,
+    "ScreenWidth": 1280,
+    "VSync": false
+}

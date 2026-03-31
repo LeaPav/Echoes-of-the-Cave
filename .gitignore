@@ -437,6 +437,10 @@ Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/src/
 Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/*.exe
 Echoes\ of\ the\ Cave/Photon-Editor-V2.0.3/*.lib
 
+Echoes\ of\ the\ Cave/PhotonEngine-Build-2.0.4/src/
+Echoes\ of\ the\ Cave/PhotonEngine-Build-2.0.4/*.exe
+Echoes\ of\ the\ Cave/PhotonEngine-Build-2.0.4/*.lib
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
