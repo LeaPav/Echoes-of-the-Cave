@@ -29,6 +29,8 @@ public:
     Engine::ECS::Entity targetEntity = Engine::ECS::NULL_ENTITY;
     bool isMouseCaptured = false;
 
+    bool isButMouseCaptured = false;
+
     void OnInit() override {
         Inspect("Sensitivity", &sensitivity);
         Inspect("Move Speed", &moveSpeed);
@@ -152,6 +154,32 @@ public:
             player.Rotation.y = yaw + 180.0f;
 
             cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
+        }
+
+        capturedEntities();
+    }
+
+    void capturedEntities() {
+
+        if (InputSysteminstance->GetMouseButtonPressed(0)) {
+            isButMouseCaptured = !isButMouseCaptured;
+            InputSysteminstance->SetMouseCapture(isButMouseCaptured);
+        }
+
+        auto& targetTransform = registry->GetComponent<Engine::Components::Transform>(targetEntity);
+        auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
+
+        if (isButMouseCaptured)
+        {
+            Engine::Systems::PhysicsUtils::RaycastHit hitResult = physicsSystem->Raycast(
+                targetTransform.Position + glm::vec3(0.05, 0.0, 0.0),
+                targetTransform.Position, 
+                targetEntity,
+                { true, 0.1f, {1, 0, 0}, {1, 1, 0}, {0, 1, 1}, {0.5, 0.5, 0.5}, 0.05f, 0.012f }
+            );
+
+            std::string HitEntityName = registry->GetEntityName(hitResult.hitEntity);
+            TerminalInstance->print("RayCast Hit " + HitEntityName);
         }
     }
 };
