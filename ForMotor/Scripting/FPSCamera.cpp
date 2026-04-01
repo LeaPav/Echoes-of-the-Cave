@@ -26,6 +26,8 @@ public:
     bool isSprinting = false;
     float sprintMultiplier = 2.0f;
 
+    float raycastMaxDistance = 100.0f;
+
     Engine::ECS::Entity targetEntity = Engine::ECS::NULL_ENTITY;
     bool isMouseCaptured = false;
 
@@ -35,17 +37,11 @@ public:
         Inspect("Head Height", &headHeight);
         Inspect("Invert X", &invertX);
         Inspect("Invert Y", &invertY);
+        Inspect("Raycast Max Distance", &raycastMaxDistance);
     }
 
     void OnCreate() override {
         FindTarget();
-
-        /* auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegisterySystem>();
-         if (funcSys) {
-             funcSys->Register("OnStep", [this](std::vector<std::any> args) -> std::any {
-                 return {};
-                 });
-         }*/
     }
 
     void FindTarget() {
@@ -57,11 +53,45 @@ public:
         }
     }
 
+    void PerformRaycast() {
+        if (!registry->HasComponent<Engine::Components::Transform>(entityID)) return;
+
+        auto& cam = registry->GetComponent<Engine::Components::Transform>(entityID);
+        auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
+
+        if (!physicsSystem) return;
+
+        glm::vec3 rayStart = cam.Position;
+        glm::vec3 rayEnd = cam.Position + glm::normalize(cam.Forward) * raycastMaxDistance;
+
+        // Debug visuel optionnel (ray jaune, hit vert)
+        Engine::Systems::PhysicsUtils::RaycastDebugOptions debugOpts;
+        debugOpts.enabled = true;
+        debugOpts.duration = 2.0f;
+
+        Engine::Systems::PhysicsUtils::RaycastHit hit = physicsSystem->Raycast(
+            rayStart,
+            rayEnd,
+            targetEntity,  // ignore le corps du joueur
+            debugOpts
+        );
+
+        if (hit.hasHit) {
+            std::string hitName = registry->GetEntityName(hit.hitEntity);
+            // Remplace par ta logique métier ici
+        }
+    }
+
     void OnUpdate(float dt) override {
 
         if (InputSysteminstance->GetMouseButtonPressed(1)) {
             isMouseCaptured = !isMouseCaptured;
             InputSysteminstance->SetMouseCapture(isMouseCaptured);
+        }
+
+        // Raycast au clic gauche (seulement si la souris est capturée)
+        if (isMouseCaptured && InputSysteminstance->GetMouseButtonPressed(0)) {
+            PerformRaycast();
         }
 
         if (targetEntity == Engine::ECS::NULL_ENTITY) {
@@ -123,6 +153,7 @@ public:
         if (glm::length(inputDirection) > 0.0f) {
             inputDirection = glm::normalize(inputDirection) * currentSpeed;
         }
+
         if (physicsSystem) {
             glm::vec3 currentVel = physicsSystem->GetLinearVelocity(targetEntity);
             auto& t = registry->GetComponent<Engine::Components::Transform>(targetEntity);
@@ -141,7 +172,6 @@ public:
                 isJumping = false;
             }
 
-            // Saut
             if (InputSysteminstance->GetKeyPressed(GLFW_KEY_SPACE) && canJump) {
                 physicsSystem->AddImpulse(targetEntity, t.Up * 2.0f);
                 canJump = false;
@@ -150,7 +180,6 @@ public:
             }
 
             player.Rotation.y = yaw + 180.0f;
-
             cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
         }
     }
