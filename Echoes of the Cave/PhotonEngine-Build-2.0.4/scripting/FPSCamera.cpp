@@ -204,6 +204,7 @@ public:
 
         }
 
+        std::cout << entitietouch << std::endl;
         
     }
 
