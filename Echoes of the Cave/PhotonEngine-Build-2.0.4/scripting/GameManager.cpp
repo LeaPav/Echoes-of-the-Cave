@@ -75,7 +75,31 @@ public:
 		Inspect("Total Puzzles", &totalPuzzles);
 	}
 	void OnCreate() override {
+		auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegistrySystem>();
+		if (!funcSys) return;
 
+		funcSys->Register("GameManager.PuzzleSolved", [this](std::vector<std::any> args) -> std::any {
+			if (args.empty()) return {};
+			try {
+				int puzzleID = std::any_cast<int>(args[0]);
+				OnPuzzleSolved(puzzleID);
+			}
+			catch (const std::bad_any_cast&) {
+				if (TerminalInstance) TerminalInstance->error("GameManager: PuzzleSolved - argument invalide");
+			}
+			return {};
+			});
+
+
+		funcSys->Register("GameManager.GetProgress", [this](std::vector<std::any> args) -> std::any {
+			return (float)puzzlesSolved / (float)totalPuzzles;
+			});
+
+		funcSys->Register("GameManager.IsGameWon", [this](std::vector<std::any> args) -> std::any {
+			return gameWon;
+			});
+
+		if (TerminalInstance) TerminalInstance->info("GameManager: Initialisé — " + std::to_string(totalPuzzles) + " puzzles à résoudre");
 	}
 
 	void OnUpdate(float deltaTime) override {
@@ -83,10 +107,15 @@ public:
 	}
 
 	void OnDestroy() override {
-
+		auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegistrySystem>();
+		if (funcSys) {
+			funcSys->Unregister("GameManager.PuzzleSolved");
+			funcSys->Unregister("GameManager.GetProgress");
+			funcSys->Unregister("GameManager.IsGameWon");
+		}
 	}
 };
 
 extern "C" SCRIPT_API Engine::Scripting::NativeScript* CreateScript() {
-	return new FPSCamera();
+	return new GameManager();
 }

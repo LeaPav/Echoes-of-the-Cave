@@ -1,0 +1,316 @@
+{
+    "Entities": [
+        {
+            "Camera": {
+                "FarPlane": 1000.0,
+                "Fov": 80.0,
+                "NearPlane": 0.009999999776482582
+            },
+            "EntityID": 243,
+            "Name": "Main Camera",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/FPSCamera.dll"
+            },
+            "Transform": {
+                "Position": [
+                    0.018616728484630585,
+                    0.11290646344423294,
+                    0.25586554408073425
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "EntityID": 244,
+            "Light": {
+                "CastShadows": true,
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Direction": [
+                    0.0,
+                    -1.0,
+                    0.0
+                ],
+                "Intensity": 5.0,
+                "OrthoSize": 1.0,
+                "Range": 5.0,
+                "ShadowFar": 30.0,
+                "ShadowNear": 0.10000000149011612,
+                "SpotAngle": 45.0,
+                "Type": 0
+            },
+            "Name": "Sun",
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "Animator": {
+                "Animations": [],
+                "SkeletonPath": ""
+            },
+            "EntityID": 245,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Mixamo\\idle_mesh.pa"
+            },
+            "Name": "Character",
+            "RigidBody": {
+                "BoxSize": [
+                    70.0,
+                    175.0,
+                    70.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.09000000357627869,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    true,
+                    false,
+                    true
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.0010000000474974513,
+                    0.0010000000474974513,
+                    0.0010000000474974513
+                ]
+            }
+        },
+        {
+            "EntityID": 246,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    1.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "EntityID": 247,
+            "Name": "Player",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/PickupThrow.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    1.0,
+                    2.0,
+                    1.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.20000000298023224,
+                    0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.10000000149011612,
+                    0.10000000149011612,
+                    0.10000000149011612
+                ]
+            }
+        },
+        {
+            "EntityID": 248,
+            "Name": "GameManager",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/GameManager.dll"
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "EntityID": 249,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Pickable_Pierre",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Projectile.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -0.10000000149011612,
+                    0.09999992698431015,
+                    0.10000014305114746
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.019999999552965164,
+                    0.019999999552965164,
+                    0.019999999552965164
+                ]
+            }
+        }
+    ]
+}
