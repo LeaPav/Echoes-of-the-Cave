@@ -1,5 +1,4 @@
 #include "script_pch.h"
-
 #ifdef _WIN32
 #define SCRIPT_API __declspec(dllexport)
 #else
@@ -8,21 +7,21 @@
 
 class MovingPlatform : public Engine::Scripting::NativeScript {
 public:
-    float raycastDistance = 10.0f;
+    float detectionRange = 3.0f; 
     float moveSpeed = 2.0f;
-    float offsetX = 3.0f;  // Distance de déplacement sur X quand détecté
+    float offsetX = 3.0f;
     float tolerance = 0.05f;
 
     float baseX = 0.0f;
-    bool  initialized = false;  // Capture baseX au premier Update (pas OnCreate)
+    bool  initialized = false;
     bool  characterDetected = false;
 
     Engine::ECS::Entity characterEntity = Engine::ECS::NULL_ENTITY;
 
     void OnInit() override {
-        Inspect("Raycast Distance", &raycastDistance);
+        Inspect("Detection Range", &detectionRange);
         Inspect("Move Speed", &moveSpeed);
-        Inspect("Offset X", &offsetX);  // Règle ça dans l'inspecteur
+        Inspect("Offset X", &offsetX);
         Inspect("Tolerance", &tolerance);
     }
 
@@ -46,31 +45,23 @@ public:
         }
 
         if (!registry->HasComponent<Engine::Components::Transform>(entityID)) return;
+        if (!registry->HasComponent<Engine::Components::Transform>(characterEntity)) return;
 
         auto& self = registry->GetComponent<Engine::Components::Transform>(entityID);
-        auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
-        if (!physicsSystem) return;
+        auto& character = registry->GetComponent<Engine::Components::Transform>(characterEntity);
 
-        // Capture la position X réelle au premier frame de jeu
         if (!initialized) {
             baseX = self.Position.x;
             initialized = true;
         }
 
-        glm::vec3 rayStart = self.Position;
-        glm::vec3 rayEnd = self.Position + glm::vec3(raycastDistance, 0.0f, 0.0f);
+        float dist = glm::length(character.Position - self.Position);
+        characterDetected = dist < detectionRange;
 
-        Engine::Systems::PhysicsUtils::RaycastDebugOptions debugOpts;
-        debugOpts.enabled = true;
-        debugOpts.duration = 0.0f;
+        // Log debug
+        printf("CubeX: %.2f | CharX: %.2f | Dist: %.2f | Detected: %d\n",
+            self.Position.x, character.Position.x, dist, (int)characterDetected);
 
-        Engine::Systems::PhysicsUtils::RaycastHit hit = physicsSystem->Raycast(
-            rayStart, rayEnd, entityID, debugOpts
-        );
-
-        characterDetected = hit.hasHit && (hit.hitEntity == characterEntity);
-
-        // Se déplace de offsetX depuis sa position de départ quand détecté
         float desiredX = characterDetected ? baseX + offsetX : baseX;
         float diff = desiredX - self.Position.x;
 
