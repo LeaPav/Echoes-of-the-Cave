@@ -32,6 +32,10 @@ public:
     bool isButMousePressed = false;
     bool entitietouch = false;
 
+    //////climb
+    bool climbable = false;
+    Engine::ECS::Entity climbableEntity = Engine::ECS::NULL_ENTITY;
+
     void OnInit() override {
         Inspect("Sensitivity", &sensitivity);
         Inspect("Move Speed", &moveSpeed);
@@ -107,10 +111,20 @@ public:
         glm::vec3 inputDirection(0.0f);
 
         if (isMouseCaptured) {
-            if (InputSysteminstance->GetKeyState(GLFW_KEY_W)) inputDirection += flatForward;
-            if (InputSysteminstance->GetKeyState(GLFW_KEY_S)) inputDirection -= flatForward;
-            if (InputSysteminstance->GetKeyState(GLFW_KEY_D)) inputDirection += flatRight;
-            if (InputSysteminstance->GetKeyState(GLFW_KEY_A)) inputDirection -= flatRight;
+            if (InputSysteminstance->GetKeyState(GLFW_KEY_W)) {
+                player.Position += flatForward * moveSpeed * dt;
+
+                player.Rotation.y = yaw + 180.0f;
+            }
+
+            if (InputSysteminstance->GetKeyState(GLFW_KEY_S)) {
+                player.Position -= flatForward * moveSpeed * dt;
+
+                player.Rotation.y = yaw + 180.0f;
+            }
+
+            if (InputSysteminstance->GetKeyState(GLFW_KEY_D)) player.Position += flatRight * moveSpeed * dt;
+            if (InputSysteminstance->GetKeyState(GLFW_KEY_A)) player.Position -= flatRight * moveSpeed * dt;
         }
 
         if (glm::length(inputDirection) > 0.0f)
@@ -152,7 +166,45 @@ public:
                 canJump = false;
                 isJumping = true;
                 jumpCooldownTimer = jumpCooldown;
+
             }
+
+            if (InputSysteminstance->GetKeyPressed(GLFW_KEY_B)) {
+
+                glm::vec3 rayOrigin = cam.Position;
+                glm::vec3 rayEnd = rayOrigin + cam.Forward * 0.1f;
+
+                Engine::Systems::PhysicsUtils::RaycastHit hitResult = physicsSystem->Raycast(
+                    rayOrigin,           // Départ : caméra
+                    rayEnd,              // Fin : direction du regard
+                    targetEntity,
+                    { true, 0.1f, {1, 0, 0}, {1, 1, 0}, {0, 1, 1}, {0.5, 0.5, 0.5}, 0.05f, 0.012f }
+                );
+
+                std::string hitName = registry->GetEntityName(hitResult.hitEntity);
+
+                if (hitName.find("Climbable") == std::string::npos) {
+                    TerminalInstance->info("FPSCamera: '" + hitName + "' n'est pas climbable");
+                    return;
+                }
+                else
+                {
+                    TerminalInstance->info("FPSCamera: '" + hitName + "' est climbable");
+                    climbable = true;
+                    return;
+                }
+                
+                if (climbable)
+                {
+                    climbableEntity = hitResult.hitEntity;
+
+                    auto& objClimb = registry->GetComponent<Engine::Components::Transform>(climbableEntity);
+
+                    glm::vec3 heightClimb;
+                }
+                
+            }
+
 
             player.Rotation.y = yaw + 180.0f;
 
@@ -160,7 +212,7 @@ public:
         }
 
         //capturedEntities();
-        {
+        /* {
 
             if (InputSysteminstance->GetMouseButtonPressed(0)) {
                 isButMousePressed = !isButMousePressed;
@@ -203,54 +255,9 @@ public:
             }
 
         }
-
-        std::cout << entitietouch << std::endl;
+        */
         
     }
-
-
-    //void capturedEntities() {
-
-    //    if (InputSysteminstance->GetMouseButtonPressed(0)) {
-    //        isButMousePressed = !isButMousePressed;
-    //        InputSysteminstance->SetMouseCapture(isButMousePressed);
-    //    }
-
-    //    // SEULEMENT si le bouton souris est maintenu
-    //    if (isButMousePressed)
-    //    {
-    //        auto& cameraTransform = registry->GetComponent<Engine::Components::Transform>(targetEntity);
-    //        auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
-    //        
-    //        // DIRECTION du regard de la caméra (normalement -Z ou Z selon ta convention)
-    //        //glm::vec3 cameraForward = glm::normalize(cameraTransform.GetForward()); // ou glm::vec3(0, 0, -1) si tu utilises une direction fixe
-    //        glm::vec3 forward = glm::normalize(glm::vec3(sin(yaw) * cos(pitch), -sin(pitch), -cos(yaw) * cos(pitch)));
-
-    //        // Point de départ : position de la caméra
-    //        glm::vec3 rayOrigin = cameraTransform.Position;
-
-    //        // Point d'arrivée : un point loin devant (ex: 1000 unités)
-    //        glm::vec3 rayEnd = rayOrigin + forward * 1000.0f;
-
-    //        Engine::Systems::PhysicsUtils::RaycastHit hitResult = physicsSystem->Raycast(
-    //            rayOrigin,           // Départ : caméra
-    //            rayEnd,              // Fin : direction du regard
-    //            targetEntity,
-    //            { true, 0.1f, {1, 0, 0}, {1, 1, 0}, {0, 1, 1}, {0.5, 0.5, 0.5}, 0.05f, 0.012f }
-    //        );
-
-    //        std::string HitEntityName = registry->GetEntityName(hitResult.hitEntity);
-    //        TerminalInstance->print("RayCast Hit " + HitEntityName);
-
-    //        if (HitEntityName == "Cube") {
-    //            entitietouch = true;
-    //        }
-    //        else
-    //        {
-    //            entitietouch = false;
-    //        }
-    //    }
-    //}
 
 };
 
