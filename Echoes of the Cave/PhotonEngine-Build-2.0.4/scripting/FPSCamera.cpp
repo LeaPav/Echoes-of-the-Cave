@@ -185,26 +185,25 @@ public:
 
                 if (hitName.find("Climbable") == std::string::npos) {
                     TerminalInstance->info("FPSCamera: '" + hitName + "' n'est pas climbable");
+                    climbable = false;
                     return;
                 }
                 else
                 {
                     TerminalInstance->info("FPSCamera: '" + hitName + "' est climbable");
                     climbable = true;
-                    return;
-                }
-                
-                if (climbable)
-                {
+
                     climbableEntity = hitResult.hitEntity;
 
                     auto& objClimb = registry->GetComponent<Engine::Components::Transform>(climbableEntity);
 
-                    glm::vec3 heightClimb;
+                    physicsSystem->AddImpulse(targetEntity, glm::vec3(0.0f, objClimb.Scale.y, 0.0f) * 10.0f);
+                    TerminalInstance->info("FPSCamera: impulse");
+                    return;
                 }
                 
+                
             }
-
 
             player.Rotation.y = yaw + 180.0f;
 
