@@ -1,12 +1,64 @@
 {
     "Entities": [
         {
+            "EntityID": 245,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane_Copy_Copy",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    1.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    1.0,
+                    0.4699999988079071,
+                    -0.09999995678663254
+                ],
+                "Rotation": [
+                    90.0,
+                    -89.99993896484375,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    0.9999778866767883,
+                    0.9999906420707703
+                ]
+            }
+        },
+        {
             "Camera": {
                 "FarPlane": 1000.0,
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 243,
+            "EntityID": 246,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -14,13 +66,13 @@
             },
             "Transform": {
                 "Position": [
-                    0.018616728484630585,
-                    0.11290646344423294,
-                    0.25586554408073425
+                    0.15738287568092346,
+                    0.14000000059604645,
+                    0.47929060459136963
                 ],
                 "Rotation": [
-                    0.0,
-                    0.0,
+                    -0.19994880259037018,
+                    -16.89995574951172,
                     0.0
                 ],
                 "Scale": [
@@ -31,7 +83,7 @@
             }
         },
         {
-            "EntityID": 244,
+            "EntityID": 247,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -76,7 +128,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 245,
+            "EntityID": 248,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -112,7 +164,7 @@
             "Transform": {
                 "Position": [
                     0.0,
-                    0.20000000298023224,
+                    -0.032499998807907104,
                     0.0
                 ],
                 "Rotation": [
@@ -128,7 +180,7 @@
             }
         },
         {
-            "EntityID": 246,
+            "EntityID": 249,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -164,12 +216,12 @@
             "Transform": {
                 "Position": [
                     0.0,
-                    0.0,
+                    -0.030000001192092896,
                     0.0
                 ],
                 "Rotation": [
                     0.0,
-                    0.0,
+                    -0.0,
                     0.0
                 ],
                 "Scale": [
@@ -180,7 +232,7 @@
             }
         },
         {
-            "EntityID": 247,
+            "EntityID": 250,
             "Name": "Player",
             "NativeScript": {
                 "Enabled": true,
@@ -207,21 +259,21 @@
                 ],
                 "Radius": 0.5,
                 "RotLock": [
+                    true,
                     false,
-                    false,
-                    false
+                    true
                 ],
                 "ShapeType": 0
             },
             "Transform": {
                 "Position": [
-                    0.0,
-                    0.20000000298023224,
-                    0.800000011920929
+                    0.15738287568092346,
+                    0.07000000029802322,
+                    0.5292906165122986
                 ],
                 "Rotation": [
                     0.0,
-                    -0.0,
+                    163.10003662109375,
                     0.0
                 ],
                 "Scale": [
@@ -232,7 +284,7 @@
             }
         },
         {
-            "EntityID": 248,
+            "EntityID": 251,
             "Name": "GameManager",
             "NativeScript": {
                 "Enabled": true,
@@ -257,7 +309,7 @@
             }
         },
         {
-            "EntityID": 249,
+            "EntityID": 252,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -288,17 +340,17 @@
                 ],
                 "Radius": 0.5,
                 "RotLock": [
+                    true,
                     false,
-                    false,
-                    false
+                    true
                 ],
                 "ShapeType": 0
             },
             "Transform": {
                 "Position": [
-                    -0.10000000149011612,
-                    0.09999992698431015,
-                    0.10000014305114746
+                    -0.12702405452728271,
+                    -0.010005983524024487,
+                    0.20868590474128723
                 ],
                 "Rotation": [
                     0.0,
@@ -309,6 +361,166 @@
                     0.019999999552965164,
                     0.019999999552965164,
                     0.019999999552965164
+                ]
+            }
+        },
+        {
+            "EntityID": 253,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cylinder_mesh.pa"
+            },
+            "Name": "Chain_1",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Breakable.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.30000001192092896,
+                    0.5699999928474426,
+                    -0.30000001192092896
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.019999999552965164,
+                    0.10000000149011612,
+                    0.019999999552965164
+                ]
+            }
+        },
+        {
+            "EntityID": 254,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Blocked_Chain_1",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.30000001192092896,
+                    0.40000006556510925,
+                    -0.30000001192092896
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07999999821186066,
+                    0.07000000029802322,
+                    0.07000000029802322
+                ]
+            }
+        },
+        {
+            "EntityID": 255,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane_Copy",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    1.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.4699999988079071,
+                    -1.0
+                ],
+                "Rotation": [
+                    89.9999771118164,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    0.9999998211860657,
+                    0.9999998211860657
                 ]
             }
         }

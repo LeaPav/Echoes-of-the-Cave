@@ -85,7 +85,7 @@ private:
         glm::vec3 throwDir = glm::normalize(camTransform.Forward + glm::vec3(0.0f, throwAngle, 0.0f));
 
         if (physicsSystem) {
-            physicsSystem->AddImpulse(heldEntity, throwDir * throwForce);
+            physicsSystem->SetLinearVelocity(heldEntity, throwDir * throwForce);
         }
         if (TerminalInstance) {
             TerminalInstance->info("PickupThrow: Object lancé");

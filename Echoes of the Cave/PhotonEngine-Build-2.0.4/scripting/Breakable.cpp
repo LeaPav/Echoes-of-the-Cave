@@ -31,10 +31,19 @@ private:
 		std::string blockedName = "Blocked_" + myName;
 		for (auto e : registry->View<Engine::Components::Transform>()) {
 			if (registry->GetEntityName(e) == blockedName) {
+				if (registry->HasComponent<Engine::Components::RigidBody>(e)) {
+					auto& rb = registry->GetComponent<Engine::Components::RigidBody>(e);
+
+					rb.isStatic = false;  
+					rb.dirty = true;
+					rb.mass = 150.f;
+				}
 				auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
 				if (physicsSystem) {
 					
-					physicsSystem->SetLinearVelocity(e, glm::vec3(0.0f, -1.0f, 0.0f));
+					physicsSystem->SetLinearVelocity(e, glm::vec3(0.0f, 0.0f, 0.0f));
+
+					//physicsSystem->AddImpulse(e, glm::vec3(0.0f, -1.0f, 0.0f) * 2.0f);
 				}
 				if (TerminalInstance)
 					TerminalInstance->info("Breakable: '" + blockedName + "' libéré !");
@@ -50,11 +59,9 @@ private:
 			if (funcSys) funcSys->Call(onBreakCall, {});
 		}
 	}
-	}
 public:
 	void OnInit() override {
 		Inspect("Impact Force Min", &impactForce);
-		Inspect("On Break Call", &onBreakCall);
 	}
 
 	void OnCreate() override {
@@ -86,3 +93,7 @@ public:
 		}
 	}
 };
+
+extern "C" SCRIPT_API Engine::Scripting::NativeScript* CreateScript() {
+	return new Breakable();
+}
