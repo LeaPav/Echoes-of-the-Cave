@@ -1,17 +1,21 @@
 {
     "Entities": [
         {
-            "EntityID": 342,
+            "EntityID": 315,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Cube",
+            "Name": "Cube_Pickable",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Projectile.dll"
+            },
             "RigidBody": {
                 "BoxSize": [
-                    1.75,
-                    1.75,
-                    1.75
+                    2.0,
+                    2.0,
+                    2.0
                 ],
                 "Height": 1.0,
                 "IsStatic": false,
@@ -58,7 +62,7 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 343,
+            "EntityID": 316,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -83,7 +87,7 @@
             }
         },
         {
-            "EntityID": 344,
+            "EntityID": 317,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -128,7 +132,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 345,
+            "EntityID": 318,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -180,7 +184,7 @@
             }
         },
         {
-            "EntityID": 346,
+            "EntityID": 319,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -225,19 +229,23 @@
                     0.0
                 ],
                 "Scale": [
+                    3.5,
                     1.0,
-                    1.0,
-                    1.0
+                    3.4000000953674316
                 ]
             }
         },
         {
-            "EntityID": 347,
+            "EntityID": 320,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cone_mesh.pa"
             },
             "Name": "Player",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/PickupThrow.dll"
+            },
             "RigidBody": {
                 "BoxSize": [
                     1.0,
@@ -259,9 +267,9 @@
                 ],
                 "Radius": 0.5,
                 "RotLock": [
+                    true,
                     false,
-                    false,
-                    false
+                    true
                 ],
                 "ShapeType": 0
             },
@@ -280,6 +288,162 @@
                     0.10000000149011612,
                     0.10000000149011612,
                     0.10000000149011612
+                ]
+            }
+        },
+        {
+            "EntityID": 321,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Cube_Climbable",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 125.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.30000001192092896,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 322,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Cube_Climbable_Copy",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 125.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -0.800000011920929,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.30000001192092896,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 323,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Cube_Climbable_Copy_Copy",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 125.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    1.100000023841858,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.15000000596046448,
+                    0.20000000298023224
                 ]
             }
         }
