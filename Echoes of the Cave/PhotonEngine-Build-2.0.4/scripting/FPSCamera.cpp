@@ -192,13 +192,14 @@ public:
                 {
                     TerminalInstance->info("FPSCamera: '" + hitName + "' est climbable");
                     climbable = true;
-
+                    
                     climbableEntity = hitResult.hitEntity;
 
                     auto& objClimb = registry->GetComponent<Engine::Components::Transform>(climbableEntity);
 
-                    physicsSystem->AddImpulse(targetEntity, glm::vec3(0.0f, objClimb.Scale.y, 0.0f) * 10.0f);
+                    physicsSystem->AddImpulse(targetEntity, glm::vec3(0.0f, objClimb.Scale.y, 0.0f) * 14.0f);
                     TerminalInstance->info("FPSCamera: impulse");
+                    
                     return;
                 }
                 
