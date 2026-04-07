@@ -1,16 +1,16 @@
 {
     "Entities": [
         {
-            "EntityID": 245,
+            "EntityID": 3,
             "MeshRenderer": {
                 "Active": true,
-                "Path": "Assets\\Default\\Plane_mesh.pa"
+                "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Plane_Copy_Copy",
+            "Name": "Blocked_Chain_1",
             "RigidBody": {
                 "BoxSize": [
                     2.0,
-                    1.0,
+                    2.0,
                     2.0
                 ],
                 "Height": 1.0,
@@ -18,7 +18,7 @@
                 "Mass": 1.0,
                 "Offset": [
                     0.0,
-                    -0.5,
+                    0.0,
                     0.0
                 ],
                 "PosLock": [
@@ -36,19 +36,19 @@
             },
             "Transform": {
                 "Position": [
-                    1.0,
-                    0.4699999988079071,
-                    -0.09999995678663254
+                    0.30000001192092896,
+                    0.40000006556510925,
+                    -0.30000001192092896
                 ],
                 "Rotation": [
-                    90.0,
-                    -89.99993896484375,
+                    0.0,
+                    -0.0,
                     0.0
                 ],
                 "Scale": [
-                    1.0,
-                    0.9999778866767883,
-                    0.9999906420707703
+                    0.07999999821186066,
+                    0.07000000029802322,
+                    0.07000000029802322
                 ]
             }
         },
@@ -58,7 +58,7 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 246,
+            "EntityID": 4,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -83,7 +83,7 @@
             }
         },
         {
-            "EntityID": 247,
+            "EntityID": 5,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -128,7 +128,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 248,
+            "EntityID": 6,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -180,7 +180,7 @@
             }
         },
         {
-            "EntityID": 249,
+            "EntityID": 7,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -217,7 +217,7 @@
                 "Position": [
                     0.0,
                     -0.030000001192092896,
-                    0.0
+                    0.9000000357627869
                 ],
                 "Rotation": [
                     0.0,
@@ -225,14 +225,14 @@
                     0.0
                 ],
                 "Scale": [
+                    3.5999999046325684,
                     1.0,
-                    1.0,
-                    1.0
+                    4.300000190734863
                 ]
             }
         },
         {
-            "EntityID": 250,
+            "EntityID": 8,
             "Name": "Player",
             "NativeScript": {
                 "Enabled": true,
@@ -284,7 +284,7 @@
             }
         },
         {
-            "EntityID": 251,
+            "EntityID": 9,
             "Name": "GameManager",
             "NativeScript": {
                 "Enabled": true,
@@ -309,7 +309,7 @@
             }
         },
         {
-            "EntityID": 252,
+            "EntityID": 10,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -365,7 +365,7 @@
             }
         },
         {
-            "EntityID": 253,
+            "EntityID": 11,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cylinder_mesh.pa"
@@ -421,12 +421,12 @@
             }
         },
         {
-            "EntityID": 254,
+            "EntityID": 12,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Blocked_Chain_1",
+            "Name": "Mur1",
             "RigidBody": {
                 "BoxSize": [
                     2.0,
@@ -456,33 +456,33 @@
             },
             "Transform": {
                 "Position": [
-                    0.30000001192092896,
-                    0.40000006556510925,
-                    -0.30000001192092896
+                    3.5999996662139893,
+                    1.6000001430511475,
+                    0.9000002145767212
                 ],
                 "Rotation": [
                     0.0,
-                    -0.0,
+                    89.9999771118164,
                     0.0
                 ],
                 "Scale": [
-                    0.07999999821186066,
-                    0.07000000029802322,
-                    0.07000000029802322
+                    4.300000190734863,
+                    1.7000000476837158,
+                    0.05000000074505806
                 ]
             }
         },
         {
-            "EntityID": 255,
+            "EntityID": 13,
             "MeshRenderer": {
                 "Active": true,
-                "Path": "Assets\\Default\\Plane_mesh.pa"
+                "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Plane_Copy",
+            "Name": "Mur2",
             "RigidBody": {
                 "BoxSize": [
                     2.0,
-                    1.0,
+                    2.0,
                     2.0
                 ],
                 "Height": 1.0,
@@ -490,7 +490,7 @@
                 "Mass": 1.0,
                 "Offset": [
                     0.0,
-                    -0.5,
+                    0.0,
                     0.0
                 ],
                 "PosLock": [
@@ -508,19 +508,175 @@
             },
             "Transform": {
                 "Position": [
-                    0.0,
-                    0.4699999988079071,
-                    -1.0
+                    -3.6000006198883057,
+                    1.6000001430511475,
+                    0.8000001907348633
                 ],
                 "Rotation": [
+                    0.0,
                     89.9999771118164,
+                    0.0
+                ],
+                "Scale": [
+                    4.599999904632568,
+                    1.7000000476837158,
+                    0.05000000074505806
+                ]
+            }
+        },
+        {
+            "EntityID": 14,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Mur3",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -6.183981895446777e-07,
+                    1.6000001430511475,
+                    -3.3999996185302734
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.1000000387430191,
+                    0.0
+                ],
+                "Scale": [
+                    3.5999999046325684,
+                    1.7000000476837158,
+                    0.05000000074505806
+                ]
+            }
+        },
+        {
+            "EntityID": 15,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Mur4",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -6.183981895446777e-07,
+                    1.6000001430511475,
+                    5.200000762939453
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.1000000387430191,
+                    0.0
+                ],
+                "Scale": [
+                    3.5999999046325684,
+                    1.7000000476837158,
+                    0.05000000074505806
+                ]
+            }
+        },
+        {
+            "EntityID": 16,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Cube1",
+            "RigidBody": {
+                "BoxSize": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.19999997317790985,
+                    1.0999997854232788,
+                    4.599999904632568
+                ],
+                "Rotation": [
+                    0.0,
                     -0.0,
                     0.0
                 ],
                 "Scale": [
-                    1.0,
-                    0.9999998211860657,
-                    0.9999998211860657
+                    0.800000011920929,
+                    0.8999999761581421,
+                    0.6000000238418579
                 ]
             }
         }
