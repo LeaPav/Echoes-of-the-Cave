@@ -28,7 +28,7 @@ private:
 			TerminalInstance->info("Breakable: chaîne '" + myName + "' brisée !");
 
 
-		std::string blockedName = "Blocked_" + myName;
+		std::string blockedName = "Climbable_Blocked_" + myName;
 		for (auto e : registry->View<Engine::Components::Transform>()) {
 			if (registry->GetEntityName(e) == blockedName) {
 				if (registry->HasComponent<Engine::Components::RigidBody>(e)) {
@@ -36,7 +36,7 @@ private:
 
 					rb.isStatic = false;  
 					rb.dirty = true;
-					rb.mass = 150.f;
+					rb.mass = 50.f;
 				}
 				auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
 				if (physicsSystem) {
