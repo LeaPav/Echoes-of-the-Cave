@@ -1,0 +1,563 @@
+{
+    "Entities": [
+        {
+            "EntityID": 413,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    9.999999747378752e-06,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.10000000149011612,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    6.099999904632568,
+                    5.300000190734863,
+                    4.400000095367432
+                ]
+            }
+        },
+        {
+            "Camera": {
+                "FarPlane": 1000.0,
+                "Fov": 80.0,
+                "NearPlane": 0.009999999776482582
+            },
+            "EntityID": 414,
+            "Name": "Main Camera",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/FPSCamera.dll"
+            },
+            "Transform": {
+                "Position": [
+                    0.0908886045217514,
+                    0.14131057262420654,
+                    3.1057181358337402
+                ],
+                "Rotation": [
+                    -24.400117874145508,
+                    86.39984130859375,
+                    -5.438632797449827e-05
+                ],
+                "Scale": [
+                    0.9999969005584717,
+                    0.999998927116394,
+                    0.9999972581863403
+                ]
+            }
+        },
+        {
+            "EntityID": 415,
+            "Light": {
+                "CastShadows": true,
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Direction": [
+                    0.0,
+                    -1.0,
+                    0.0
+                ],
+                "Intensity": 5.0,
+                "OrthoSize": 1.0,
+                "Range": 5.0,
+                "ShadowFar": 30.0,
+                "ShadowNear": 0.10000000149011612,
+                "SpotAngle": 45.0,
+                "Type": 0
+            },
+            "Name": "Sun",
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        {
+            "Animator": {
+                "Animations": [],
+                "SkeletonPath": ""
+            },
+            "EntityID": 416,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Mixamo\\Idle_mesh.pa"
+            },
+            "Name": "Character",
+            "RigidBody": {
+                "BoxSize": [
+                    1.0,
+                    2.0,
+                    1.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    true,
+                    false,
+                    true
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.0010000000474974513,
+                    0.0010000000474974513,
+                    0.0010000000474974513
+                ]
+            }
+        },
+        {
+            "EntityID": 417,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_X",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Dalle-X.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -1.399999737739563,
+                    0.20000000298023224,
+                    9.09999942779541
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 418,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane_mesh",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    9.999999747378752e-05,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    10.5
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    0.30000001192092896,
+                    6.099999904632568
+                ]
+            }
+        },
+        {
+            "EntityID": 424,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_-X_2",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Dalle-X.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    1.3000003099441528,
+                    0.20000000298023224,
+                    7.90000057220459
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 420,
+            "Name": "Player",
+            "RigidBody": {
+                "BoxSize": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    true,
+                    false,
+                    true
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.10000000149011612,
+                    4.700000286102295
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.10000000149011612,
+                    0.10000000149011612,
+                    0.10000000149011612
+                ]
+            }
+        },
+        {
+            "EntityID": 421,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_-X",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Dalle-X.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    1.3000003099441528,
+                    0.20000000298023224,
+                    5.400000095367432
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 422,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_X_2",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/DalleX.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -1.399999737739563,
+                    0.20000000298023224,
+                    6.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 423,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_X_3",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/DalleX.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -1.399999737739563,
+                    0.20000000298023224,
+                    6.700000286102295
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        }
+    ]
+}
