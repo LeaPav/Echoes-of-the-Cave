@@ -10,10 +10,11 @@ class FPSCamera : public Engine::Scripting::NativeScript {
 public:
     float sensitivity = 0.1f;
     float moveSpeed = 1.0f;
-    float headHeight = 1.7f;
+    float distance = 0.1f;
+    float targetHeightOffset = 0.1f;
 
     float yaw = 0.0f;
-    float pitch = 0.0f;
+    float pitch = 20.0f;
 
     bool invertX = false;
     bool invertY = false;
@@ -39,7 +40,7 @@ public:
     void OnInit() override {
         Inspect("Sensitivity", &sensitivity);
         Inspect("Move Speed", &moveSpeed);
-        Inspect("Head Height", &headHeight);
+        Inspect("Head Height", &distance);
         Inspect("Invert X", &invertX);
         Inspect("Invert Y", &invertY);
     }
@@ -134,7 +135,11 @@ public:
         }
 
         player.Rotation.y = yaw + 180.0f;
-        cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
+
+        //cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
+
+        glm::vec3 orbitPos = player.Position + glm::vec3(0.0f, targetHeightOffset, 0.0f);
+        cam.Position = orbitPos + (cam.Forward * distance);
 
         if (physicsSystem) {
             glm::vec3 currentVel = physicsSystem->GetLinearVelocity(targetEntity);
