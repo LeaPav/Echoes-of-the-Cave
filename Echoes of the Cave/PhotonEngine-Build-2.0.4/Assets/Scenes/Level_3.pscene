@@ -1,7 +1,7 @@
 {
     "Entities": [
         {
-            "EntityID": 579,
+            "EntityID": 617,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -58,7 +58,7 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 580,
+            "EntityID": 618,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -83,7 +83,7 @@
             }
         },
         {
-            "EntityID": 581,
+            "EntityID": 619,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -128,7 +128,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 582,
+            "EntityID": 620,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -180,7 +180,7 @@
             }
         },
         {
-            "EntityID": 583,
+            "EntityID": 621,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -232,7 +232,7 @@
             }
         },
         {
-            "EntityID": 584,
+            "EntityID": 622,
             "Name": "Player",
             "NativeScript": {
                 "Enabled": true,
@@ -284,7 +284,7 @@
             }
         },
         {
-            "EntityID": 585,
+            "EntityID": 623,
             "Name": "GameManager",
             "NativeScript": {
                 "Enabled": true,
@@ -309,7 +309,7 @@
             }
         },
         {
-            "EntityID": 586,
+            "EntityID": 624,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -350,7 +350,7 @@
                 "Position": [
                     -0.12702405452728271,
                     -0.010005983524024487,
-                    4.008686065673828
+                    3.9086861610412598
                 ],
                 "Rotation": [
                     0.0,
@@ -365,7 +365,7 @@
             }
         },
         {
-            "EntityID": 587,
+            "EntityID": 625,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cylinder_mesh.pa"
@@ -421,7 +421,7 @@
             }
         },
         {
-            "EntityID": 588,
+            "EntityID": 626,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -473,7 +473,7 @@
             }
         },
         {
-            "EntityID": 589,
+            "EntityID": 627,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -525,7 +525,7 @@
             }
         },
         {
-            "EntityID": 590,
+            "EntityID": 628,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -577,7 +577,7 @@
             }
         },
         {
-            "EntityID": 591,
+            "EntityID": 629,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -629,7 +629,7 @@
             }
         },
         {
-            "EntityID": 592,
+            "EntityID": 630,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -681,7 +681,7 @@
             }
         },
         {
-            "EntityID": 593,
+            "EntityID": 631,
             "MeshRenderer": {
                 "Active": true,
                 "Materials": [
@@ -709,7 +709,7 @@
             }
         },
         {
-            "EntityID": 594,
+            "EntityID": 632,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -734,7 +734,7 @@
             }
         },
         {
-            "EntityID": 595,
+            "EntityID": 633,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -786,7 +786,7 @@
             }
         },
         {
-            "EntityID": 596,
+            "EntityID": 634,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -834,6 +834,62 @@
                     0.20000000298023224,
                     0.15000000596046448,
                     0.699999988079071
+                ]
+            }
+        },
+        {
+            "EntityID": 635,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Pickable_Pierre_2",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Projectile.dll"
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    true,
+                    false,
+                    true
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.17297595739364624,
+                    -0.010005983524024487,
+                    3.708686113357544
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.019999999552965164,
+                    0.019999999552965164,
+                    0.019999999552965164
                 ]
             }
         }
