@@ -7,16 +7,16 @@
 
 class OscillatingPlatform : public Engine::Scripting::NativeScript {
 public:
-    float moveSpeed = 2.0f;
+    float moveSpeed = 0.3f;
     float offsetX = 0.0f;  // Distance de déplacement (peut être négatif)
     float offsetY = 0.0f;
     float offsetZ = 3.0f;
-    float waitTime = 1.0f;  // Pause en secondes à chaque extrémité
+    float waitTime = 0.0f;  // Pause en secondes à chaque extrémité
 
     float baseX = 0.0f, baseY = 0.0f, baseZ = 0.0f;
     float timer = 0.0f;
     bool  initialized = false;
-    bool  goingForward = true;  // Direction actuelle
+    bool  goingForward = true;
     bool  waiting = false;
 
     void OnInit() override {
