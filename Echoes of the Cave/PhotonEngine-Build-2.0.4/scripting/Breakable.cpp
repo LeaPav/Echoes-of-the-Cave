@@ -36,7 +36,7 @@ private:
 
 					rb.isStatic = false;  
 					rb.dirty = true;
-					rb.mass = 15.f;
+					rb.mass = 5.f;
 				}
 				auto physicsSystem = engine->GetSystem<Engine::Systems::PhysicsSystem>();
 				if (physicsSystem) {
