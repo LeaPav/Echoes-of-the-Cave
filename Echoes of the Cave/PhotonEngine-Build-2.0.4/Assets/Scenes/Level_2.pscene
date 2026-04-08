@@ -1,16 +1,16 @@
 {
     "Entities": [
         {
-            "EntityID": 1123,
+            "EntityID": 1109,
             "MeshRenderer": {
                 "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
+                "Path": "Assets\\Default\\Plane_mesh.pa"
             },
-            "Name": "Climbable_Blocked_Chain_1",
+            "Name": "Plane",
             "RigidBody": {
                 "BoxSize": [
                     2.0,
-                    2.0,
+                    9.999999747378752e-06,
                     2.0
                 ],
                 "Height": 1.0,
@@ -36,9 +36,9 @@
             },
             "Transform": {
                 "Position": [
-                    -1.9000000953674316,
-                    0.7000001072883606,
-                    3.8999998569488525
+                    0.10000000149011612,
+                    0.0,
+                    0.0
                 ],
                 "Rotation": [
                     0.0,
@@ -46,9 +46,9 @@
                     0.0
                 ],
                 "Scale": [
-                    0.18000000715255737,
-                    0.15000000596046448,
-                    0.17000000178813934
+                    6.099999904632568,
+                    5.300000190734863,
+                    4.400000095367432
                 ]
             }
         },
@@ -58,7 +58,7 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 1124,
+            "EntityID": 1110,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -68,24 +68,24 @@
             },
             "Transform": {
                 "Position": [
-                    0.15738287568092346,
-                    0.14000000059604645,
-                    0.47929060459136963
+                    1.1464563608169556,
+                    0.141137033700943,
+                    2.9634392261505127
                 ],
                 "Rotation": [
-                    -0.19994880259037018,
-                    -16.89995574951172,
+                    -5.100025177001953,
+                    -166.00001525878906,
                     0.0
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    0.9999969005584717,
+                    0.999998927116394,
+                    0.9999972581863403
                 ]
             }
         },
         {
-            "EntityID": 1125,
+            "EntityID": 1111,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -98,24 +98,24 @@
                     -1.0,
                     0.0
                 ],
-                "Intensity": 14.100000381469727,
+                "Intensity": 5.0,
                 "OrthoSize": 1.0,
-                "Range": 6.5,
+                "Range": 5.0,
                 "ShadowFar": 30.0,
                 "ShadowNear": 0.10000000149011612,
                 "SpotAngle": 45.0,
-                "Type": 1
+                "Type": 0
             },
             "Name": "Sun",
             "Transform": {
                 "Position": [
                     0.0,
-                    2.4000000953674316,
-                    0.7000000476837158
+                    0.0,
+                    0.0
                 ],
                 "Rotation": [
                     0.0,
-                    -0.0,
+                    0.0,
                     0.0
                 ],
                 "Scale": [
@@ -130,118 +130,12 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 1126,
+            "EntityID": 1112,
             "MeshRenderer": {
                 "Active": true,
-                "Path": "Assets\\Mixamo\\idle_mesh.pa"
+                "Path": "Assets\\Mixamo\\Idle_mesh.pa"
             },
             "Name": "Character",
-            "RigidBody": {
-                "BoxSize": [
-                    70.0,
-                    175.0,
-                    70.0
-                ],
-                "Height": 1.0,
-                "IsStatic": false,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.09000000357627869,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    true,
-                    false,
-                    true
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    0.0,
-                    -0.032499998807907104,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.0010000000474974513,
-                    0.0010000000474974513,
-                    0.0010000000474974513
-                ]
-            }
-        },
-        {
-            "EntityID": 1127,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Plane_mesh.pa"
-            },
-            "Name": "Plane",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    1.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    -0.5,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    0.0,
-                    -0.10000000149011612,
-                    0.9000000357627869
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    3.5999999046325684,
-                    1.0,
-                    4.300000190734863
-                ]
-            }
-        },
-        {
-            "EntityID": 1128,
-            "Name": "Player",
-            "NativeScript": {
-                "Enabled": true,
-                "Path": "Scripts/PickupThrow.dll",
-                "Persistant": false,
-                "RunInEditor": false
-            },
             "RigidBody": {
                 "BoxSize": [
                     1.0,
@@ -271,32 +165,142 @@
             },
             "Transform": {
                 "Position": [
-                    0.15738287568092346,
-                    0.07000000029802322,
-                    4.629290580749512
+                    0.0,
+                    -15616.279296875,
+                    0.0
                 ],
                 "Rotation": [
-                    -179.99989318847656,
-                    16.899959564208984,
-                    -179.99989318847656
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 "Scale": [
-                    0.09999994188547134,
-                    0.10000000149011612,
-                    0.09999994188547134
+                    0.0010000000474974513,
+                    0.0010000000474974513,
+                    0.0010000000474974513
                 ]
             }
         },
         {
-            "EntityID": 1129,
+            "EntityID": 1113,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Pickable_Pierre_2",
+            "Name": "Block_X",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Projectile.dll",
+                "Path": "Scripts/Dalle-X.dll",
+                "Persistant": false,
+                "RunInEditor": false
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -3.6431636810302734,
+                    0.20000000298023224,
+                    9.09999942779541
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 1114,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Plane_mesh.pa"
+            },
+            "Name": "Plane_mesh",
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    9.999999747378752e-05,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.0,
+                    0.0,
+                    10.5
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    0.30000001192092896,
+                    6.099999904632568
+                ]
+            }
+        },
+        {
+            "EntityID": 1115,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_-X_2",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Dalle-X.dll",
                 "Persistant": true,
                 "RunInEditor": false
             },
@@ -316,22 +320,22 @@
                 ],
                 "PosLock": [
                     false,
-                    false,
+                    true,
                     false
                 ],
                 "Radius": 0.5,
                 "RotLock": [
-                    true,
                     false,
-                    true
+                    true,
+                    false
                 ],
                 "ShapeType": 0
             },
             "Transform": {
                 "Position": [
-                    0.17297595739364624,
-                    -0.010005983524024487,
-                    3.708686113357544
+                    -0.9431637525558472,
+                    0.20000000298023224,
+                    7.90000057220459
                 ],
                 "Rotation": [
                     0.0,
@@ -339,30 +343,20 @@
                     0.0
                 ],
                 "Scale": [
-                    0.019999999552965164,
-                    0.019999999552965164,
-                    0.019999999552965164
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
                 ]
             }
         },
         {
-            "EntityID": 1130,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Pickable_Pierre",
-            "NativeScript": {
-                "Enabled": true,
-                "Path": "Scripts/Projectile.dll",
-                "Persistant": false,
-                "RunInEditor": false
-            },
+            "EntityID": 1116,
+            "Name": "Player",
             "RigidBody": {
                 "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ],
                 "Height": 1.0,
                 "IsStatic": false,
@@ -387,9 +381,67 @@
             },
             "Transform": {
                 "Position": [
-                    -0.12702405452728271,
-                    -0.010005983524024487,
-                    3.9086861610412598
+                    1.1223599910736084,
+                    0.05002650246024132,
+                    2.8667938709259033
+                ],
+                "Rotation": [
+                    0.0,
+                    13.999984741210938,
+                    0.0
+                ],
+                "Scale": [
+                    0.10000000149011612,
+                    0.10000000149011612,
+                    0.10000000149011612
+                ]
+            }
+        },
+        {
+            "EntityID": 1117,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_-X",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/Dalle-X.dll",
+                "Persistant": false,
+                "RunInEditor": false
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -0.9431637525558472,
+                    0.20000000298023224,
+                    5.400000095367432
                 ],
                 "Rotation": [
                     0.0,
@@ -397,22 +449,138 @@
                     0.0
                 ],
                 "Scale": [
-                    0.019999999552965164,
-                    0.019999999552965164,
-                    0.019999999552965164
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
                 ]
             }
         },
         {
-            "EntityID": 1131,
+            "EntityID": 1118,
             "MeshRenderer": {
                 "Active": true,
-                "Path": "Assets\\Default\\Cylinder_mesh.pa"
+                "Path": "Assets\\Default\\Cube_mesh.pa"
             },
-            "Name": "Chain_1",
+            "Name": "Block_X_2",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Breakable.dll",
+                "Path": "Scripts/DalleX.dll",
+                "Persistant": false,
+                "RunInEditor": false
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.843164324760437,
+                    0.20000000298023224,
+                    6.0
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 1119,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Block_X_3",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/DalleX.dll",
+                "Persistant": false,
+                "RunInEditor": false
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": false,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    true,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    0.843164324760437,
+                    0.20000000298023224,
+                    6.700000286102295
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.20000000298023224
+                ]
+            }
+        },
+        {
+            "EntityID": 1120,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Door",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/DoorInteraction.dll",
                 "Persistant": false,
                 "RunInEditor": false
             },
@@ -445,9 +613,9 @@
             },
             "Transform": {
                 "Position": [
-                    -1.899999976158142,
-                    0.9699999690055847,
-                    3.9000000953674316
+                    1.7999999523162842,
+                    0.3999999761581421,
+                    2.799999952316284
                 ],
                 "Rotation": [
                     0.0,
@@ -455,431 +623,14 @@
                     0.0
                 ],
                 "Scale": [
-                    0.019999999552965164,
-                    0.15000000596046448,
-                    0.019999999552965164
-                ]
-            }
-        },
-        {
-            "EntityID": 1132,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Cube2",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    3.5999996662139893,
-                    1.6000001430511475,
-                    0.9000002145767212
-                ],
-                "Rotation": [
-                    0.0,
-                    89.9999771118164,
-                    0.0
-                ],
-                "Scale": [
-                    4.300000190734863,
-                    1.7000000476837158,
-                    0.05000000074505806
-                ]
-            }
-        },
-        {
-            "EntityID": 1133,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Mur2",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    -3.6000006198883057,
-                    1.6000001430511475,
-                    0.8000001907348633
-                ],
-                "Rotation": [
-                    0.0,
-                    89.9999771118164,
-                    0.0
-                ],
-                "Scale": [
-                    4.599999904632568,
-                    1.7000000476837158,
-                    0.05000000074505806
-                ]
-            }
-        },
-        {
-            "EntityID": 1134,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Climbable_Blocked_Chain_1",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    1.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    -6.183981895446777e-07,
-                    1.6000001430511475,
-                    -3.3999996185302734
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.1000000387430191,
-                    0.0
-                ],
-                "Scale": [
-                    3.5999999046325684,
-                    1.7000000476837158,
-                    0.05000000074505806
-                ]
-            }
-        },
-        {
-            "EntityID": 1135,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Mur4",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    -6.183981895446777e-07,
-                    1.6000001430511475,
-                    5.200000762939453
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.1000000387430191,
-                    0.0
-                ],
-                "Scale": [
-                    3.5999999046325684,
-                    1.7000000476837158,
-                    0.05000000074505806
-                ]
-            }
-        },
-        {
-            "EntityID": 1136,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Cube1",
-            "RigidBody": {
-                "BoxSize": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    0.19999997317790985,
-                    1.0999997854232788,
-                    -2.700000286102295
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.800000011920929,
-                    0.8999999761581421,
-                    0.6000000238418579
-                ]
-            }
-        },
-        {
-            "EntityID": 1137,
-            "MeshRenderer": {
-                "Active": true,
-                "Materials": [
-                    "Assets\\Materials\\Test.pa"
-                ],
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Cube2",
-            "Transform": {
-                "Position": [
-                    -2.0,
-                    1.2000000476837158,
-                    4.200000286102295
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
                     0.05000000074505806,
-                    1.0
+                    0.4000000059604645,
+                    0.20000000298023224
                 ]
             }
         },
         {
-            "EntityID": 1138,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Door",
-            "Transform": {
-                "Position": [
-                    0.20000000298023224,
-                    2.4000000953674316,
-                    -3.1999998092651367
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.30000001192092896,
-                    0.05000000074505806
-                ]
-            }
-        },
-        {
-            "EntityID": 1139,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Cube_3",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    1.3000000715255737,
-                    0.05000000447034836,
-                    4.300000190734863
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.15000000596046448,
-                    0.699999988079071
-                ]
-            }
-        },
-        {
-            "EntityID": 1140,
-            "MeshRenderer": {
-                "Active": true,
-                "Path": "Assets\\Default\\Cube_mesh.pa"
-            },
-            "Name": "Climbable_Cube_4",
-            "RigidBody": {
-                "BoxSize": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "Height": 1.0,
-                "IsStatic": true,
-                "Mass": 1.0,
-                "Offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "PosLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "Radius": 0.5,
-                "RotLock": [
-                    false,
-                    false,
-                    false
-                ],
-                "ShapeType": 0
-            },
-            "Transform": {
-                "Position": [
-                    1.3000000715255737,
-                    0.3499999940395355,
-                    4.300000190734863
-                ],
-                "Rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.15000000596046448,
-                    0.699999988079071
-                ]
-            }
-        },
-        {
-            "EntityID": 1141,
+            "EntityID": 1121,
             "Name": "GameManager",
             "NativeScript": {
                 "Enabled": true,

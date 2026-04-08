@@ -70,11 +70,8 @@ private:
 			}
 		}
 	}
-public:
-	void OnInit() override {
-		Inspect("Total Puzzles", &totalPuzzles);
-	}
-	void OnCreate() override {
+	
+	void RegisterFunctions() {
 		auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegistrySystem>();
 		if (!funcSys) return;
 
@@ -90,7 +87,6 @@ public:
 			return {};
 			});
 
-
 		funcSys->Register("GameManager.GetProgress", [this](std::vector<std::any> args) -> std::any {
 			return (float)puzzlesSolved / (float)totalPuzzles;
 			});
@@ -99,7 +95,34 @@ public:
 			return gameWon;
 			});
 
-		if (TerminalInstance) TerminalInstance->info("GameManager: Initialisé — " + std::to_string(totalPuzzles) + " puzzles à résoudre");
+		funcSys->Register("GameManager.IncrementLevel", [this](std::vector<std::any> args) -> std::any {
+			puzzlesSolved++;
+			if (TerminalInstance)
+				TerminalInstance->info("GameManager: Niveau passé (" + std::to_string(puzzlesSolved) + ")");
+			return {};
+			});
+
+		funcSys->Register("GameManager.GetNextLevel", [this](std::vector<std::any> args) -> std::any {
+			std::vector<std::string> levelPaths = {
+				"Assets/Scenes/Level_2.pscene",
+				"Assets/Scenes/Level_3.pscene",
+				"Assets/Scenes/TreasureRoom.pscene"
+			};
+
+			if (puzzlesSolved >= levelPaths.size()) {
+				return std::string("");
+			}
+			return levelPaths[puzzlesSolved];
+			});
+
+		if (TerminalInstance) TerminalInstance->info("GameManager: Fonctions enregistrees");
+	}
+public:
+	void OnInit() override {
+		Inspect("Total Puzzles", &totalPuzzles);
+	}
+	void OnCreate() override {
+		RegisterFunctions();
 	}
 
 	void OnUpdate(float deltaTime) override {
@@ -113,6 +136,16 @@ public:
 			funcSys->Unregister("GameManager.GetProgress");
 			funcSys->Unregister("GameManager.IsGameWon");
 		}
+	}
+
+	void OnReassignation() override {
+		if (TerminalInstance) {
+			TerminalInstance->info("GameManager: Réassigné à l'entité " +
+				std::to_string(static_cast<uint32_t>(entityID)));
+		}
+
+		RegisterFunctions();
+		
 	}
 };
 
