@@ -27,6 +27,9 @@
     <ClCompile Include="src\core\test.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="PhotonEngine-Build-2.0.4\scripting\conditionDoorLiam.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\game.h">

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PhotonEngine-Build-2.0.4\scripting\conditionDoorLiam.cpp" />
     <ClCompile Include="src\core\main.cpp" />
     <ClCompile Include="src\core\test.cpp" />
     <ClCompile Include="src\entities\player.cpp" />
