@@ -1,7 +1,7 @@
 {
     "Entities": [
         {
-            "EntityID": 1042,
+            "EntityID": 1591,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -9,7 +9,9 @@
             "Name": "Cube_Pickable_0",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Projectile.dll"
+                "Path": "Scripts/Projectile.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -62,11 +64,13 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 1043,
+            "EntityID": 1592,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/FPSCamera.dll"
+                "Path": "Scripts/FPSCamera.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "Transform": {
                 "Position": [
@@ -87,7 +91,7 @@
             }
         },
         {
-            "EntityID": 1044,
+            "EntityID": 1593,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -132,7 +136,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 1045,
+            "EntityID": 1594,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -184,7 +188,7 @@
             }
         },
         {
-            "EntityID": 1046,
+            "EntityID": 1595,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -236,7 +240,7 @@
             }
         },
         {
-            "EntityID": 1047,
+            "EntityID": 1596,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cone_mesh.pa"
@@ -244,7 +248,9 @@
             "Name": "Player",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/PickupThrow.dll"
+                "Path": "Scripts/PickupThrow.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -292,7 +298,7 @@
             }
         },
         {
-            "EntityID": 1048,
+            "EntityID": 1597,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -344,7 +350,7 @@
             }
         },
         {
-            "EntityID": 1049,
+            "EntityID": 1598,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -396,7 +402,7 @@
             }
         },
         {
-            "EntityID": 1050,
+            "EntityID": 1599,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -448,7 +454,7 @@
             }
         },
         {
-            "EntityID": 1051,
+            "EntityID": 1600,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -456,7 +462,9 @@
             "Name": "Cube_Pickable_1",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Projectile.dll"
+                "Path": "Scripts/Projectile.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -504,7 +512,7 @@
             }
         },
         {
-            "EntityID": 1052,
+            "EntityID": 1601,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -512,7 +520,9 @@
             "Name": "Cube_Pickable_2",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Projectile.dll"
+                "Path": "Scripts/Projectile.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -560,7 +570,7 @@
             }
         },
         {
-            "EntityID": 1053,
+            "EntityID": 1602,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -568,7 +578,9 @@
             "Name": "Cube_Pickable_3",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/Projectile.dll"
+                "Path": "Scripts/Projectile.dll",
+                "Persistant": false,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -616,7 +628,7 @@
             }
         },
         {
-            "EntityID": 1054,
+            "EntityID": 1603,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -668,7 +680,7 @@
             }
         },
         {
-            "EntityID": 1055,
+            "EntityID": 1604,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -720,7 +732,7 @@
             }
         },
         {
-            "EntityID": 1056,
+            "EntityID": 1605,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -772,7 +784,7 @@
             }
         },
         {
-            "EntityID": 1057,
+            "EntityID": 1606,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -824,7 +836,7 @@
             }
         },
         {
-            "EntityID": 1058,
+            "EntityID": 1607,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -832,7 +844,9 @@
             "Name": "Door",
             "NativeScript": {
                 "Enabled": true,
-                "Path": "Scripts/DoorInteraction.dll"
+                "Path": "Scripts/DoorInteraction.dll",
+                "Persistant": true,
+                "RunInEditor": false
             },
             "RigidBody": {
                 "BoxSize": [
@@ -876,6 +890,64 @@
                     0.20000000298023224,
                     0.30000001192092896,
                     0.05000000074505806
+                ]
+            }
+        },
+        {
+            "EntityID": 1608,
+            "MeshRenderer": {
+                "Active": true,
+                "Path": "Assets\\Default\\Cube_mesh.pa"
+            },
+            "Name": "Box col",
+            "NativeScript": {
+                "Enabled": true,
+                "Path": "Scripts/conditionDoorLiam.dll",
+                "Persistant": false,
+                "RunInEditor": false
+            },
+            "RigidBody": {
+                "BoxSize": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "Height": 1.0,
+                "IsStatic": true,
+                "Mass": 1.0,
+                "Offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "PosLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "Radius": 0.5,
+                "RotLock": [
+                    false,
+                    false,
+                    false
+                ],
+                "ShapeType": 0
+            },
+            "Transform": {
+                "Position": [
+                    -0.10000000149011612,
+                    0.10000000149011612,
+                    3.075000047683716
+                ],
+                "Rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.800000011920929,
+                    0.02500000037252903,
+                    0.02500000037252903
                 ]
             }
         }
