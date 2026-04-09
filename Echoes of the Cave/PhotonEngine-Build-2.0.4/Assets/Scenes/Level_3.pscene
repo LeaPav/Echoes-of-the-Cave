@@ -1,7 +1,7 @@
 {
     "Entities": [
         {
-            "EntityID": 1169,
+            "EntityID": 62,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -58,7 +58,7 @@
                 "Fov": 80.0,
                 "NearPlane": 0.009999999776482582
             },
-            "EntityID": 1170,
+            "EntityID": 63,
             "Name": "Main Camera",
             "NativeScript": {
                 "Enabled": true,
@@ -85,7 +85,7 @@
             }
         },
         {
-            "EntityID": 1171,
+            "EntityID": 64,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -130,7 +130,7 @@
                 "Animations": [],
                 "SkeletonPath": ""
             },
-            "EntityID": 1172,
+            "EntityID": 65,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Mixamo\\idle_mesh.pa"
@@ -182,7 +182,7 @@
             }
         },
         {
-            "EntityID": 1173,
+            "EntityID": 66,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -234,7 +234,7 @@
             }
         },
         {
-            "EntityID": 1174,
+            "EntityID": 67,
             "Name": "Player",
             "NativeScript": {
                 "Enabled": true,
@@ -273,7 +273,7 @@
                 "Position": [
                     0.19045911729335785,
                     1.799999713897705,
-                    -3.0992908477783203
+                    -2.5992908477783203
                 ],
                 "Rotation": [
                     -179.99989318847656,
@@ -281,14 +281,14 @@
                     -179.99989318847656
                 ],
                 "Scale": [
-                    0.09999994188547134,
+                    0.09999994933605194,
                     0.10000000149011612,
-                    0.09999994188547134
+                    0.09999994933605194
                 ]
             }
         },
         {
-            "EntityID": 1175,
+            "EntityID": 68,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -346,7 +346,7 @@
             }
         },
         {
-            "EntityID": 1176,
+            "EntityID": 69,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -404,7 +404,7 @@
             }
         },
         {
-            "EntityID": 1177,
+            "EntityID": 70,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cylinder_mesh.pa"
@@ -462,7 +462,7 @@
             }
         },
         {
-            "EntityID": 1178,
+            "EntityID": 71,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -514,7 +514,7 @@
             }
         },
         {
-            "EntityID": 1179,
+            "EntityID": 72,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -566,7 +566,7 @@
             }
         },
         {
-            "EntityID": 1180,
+            "EntityID": 73,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -618,7 +618,7 @@
             }
         },
         {
-            "EntityID": 1181,
+            "EntityID": 74,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -670,7 +670,7 @@
             }
         },
         {
-            "EntityID": 1182,
+            "EntityID": 75,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -722,7 +722,7 @@
             }
         },
         {
-            "EntityID": 1183,
+            "EntityID": 76,
             "MeshRenderer": {
                 "Active": true,
                 "Materials": [
@@ -750,7 +750,7 @@
             }
         },
         {
-            "EntityID": 1184,
+            "EntityID": 77,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -808,7 +808,7 @@
             }
         },
         {
-            "EntityID": 1185,
+            "EntityID": 78,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -860,7 +860,7 @@
             }
         },
         {
-            "EntityID": 1186,
+            "EntityID": 79,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -912,7 +912,7 @@
             }
         },
         {
-            "EntityID": 1187,
+            "EntityID": 80,
             "Name": "GameManager",
             "NativeScript": {
                 "Enabled": true,
@@ -939,7 +939,7 @@
             }
         },
         {
-            "EntityID": 1188,
+            "EntityID": 81,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -964,7 +964,7 @@
             }
         },
         {
-            "EntityID": 1189,
+            "EntityID": 82,
             "Light": {
                 "CastShadows": true,
                 "Color": [
@@ -1005,7 +1005,7 @@
             }
         },
         {
-            "EntityID": 1190,
+            "EntityID": 83,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -1063,7 +1063,7 @@
             }
         },
         {
-            "EntityID": 1191,
+            "EntityID": 84,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -1121,7 +1121,7 @@
             }
         },
         {
-            "EntityID": 1192,
+            "EntityID": 85,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -1146,7 +1146,7 @@
             }
         },
         {
-            "EntityID": 1193,
+            "EntityID": 86,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -1198,7 +1198,7 @@
             }
         },
         {
-            "EntityID": 1194,
+            "EntityID": 87,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Plane_mesh.pa"
@@ -1250,7 +1250,7 @@
             }
         },
         {
-            "EntityID": 1195,
+            "EntityID": 88,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cylinder_mesh.pa"
@@ -1308,7 +1308,7 @@
             }
         },
         {
-            "EntityID": 1196,
+            "EntityID": 89,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
@@ -1360,7 +1360,7 @@
             }
         },
         {
-            "EntityID": 1197,
+            "EntityID": 90,
             "MeshRenderer": {
                 "Active": true,
                 "Path": "Assets\\Default\\Cube_mesh.pa"
