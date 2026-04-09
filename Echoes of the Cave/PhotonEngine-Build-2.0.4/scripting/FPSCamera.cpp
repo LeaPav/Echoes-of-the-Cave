@@ -14,7 +14,7 @@ public:
     float targetHeightOffset = 0.1f;
 
     float yaw = 0.0f;
-    float pitch = 20.0f;
+    float pitch = 0.0f;
 
     bool invertX = false;
     bool invertY = false;
@@ -134,7 +134,7 @@ public:
             inputDirection = glm::normalize(inputDirection) * currentSpeed;
         }
 
-        player.Rotation.y = yaw + 180.0f;
+        //player.Rotation.y = yaw + 180.0f;
 
         //cam.Position = player.Position + glm::vec3(0.f, 0.07f, -0.05f);
 
