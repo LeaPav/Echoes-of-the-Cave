@@ -31,7 +31,7 @@ namespace Engine::Systems {
         )
 
         EDITOR_METHOD(
-            void OnEditorGUI() override  {
+            void OnEditorGUI() override {
             }
         )
     };

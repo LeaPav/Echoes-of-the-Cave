@@ -34,10 +34,12 @@
 #include "Systems/PhysicsSystem.h"
 #include "Systems/RenderSystem.h"
 #include "Systems/TerminalSystem.h"
+#include "Systems/AssetSystem.h"
 #include "Systems/ImGuiSystem.h"
 #include "Systems/FunctionRegistrySystem.h"
 #include "Systems/MotionMatchingSystem.h"
 #include "Systems/AudioSystem.h"
+#include "Systems/SceneSerializerSystem.h"
 
 // --- Components ---
 // Include commonly used components so scripts don't have to manually include them

@@ -36,10 +36,12 @@ public:
 
         std::string hitName = registry->GetEntityName(hit.hitEntity);
 
-        auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegistrySystem>();
-        if (funcSys) {
-            std::string callName = "Breakable.Hit." + hitName;
-            funcSys->Call(callName, { damageForce });
+        if (hitName.find("Chain") != std::string::npos) {
+            auto funcSys = engine->GetSystem<Engine::Systems::FunctionRegistrySystem>();
+            if (funcSys) {
+                std::string callName = "Breakable.Hit." + hitName;
+                funcSys->Call(callName, { damageForce });
+            }
         }
     }
 };
